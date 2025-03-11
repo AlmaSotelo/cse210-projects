@@ -10,9 +10,6 @@ class Program
         int favNumber = PromptUserNumber();
         int sqr = SquareNumber(favNumber);
         DisplayResult(name,sqr);
-
-
-
     }
     static void DisplayMessage()
     {
