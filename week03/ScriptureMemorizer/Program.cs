@@ -40,7 +40,7 @@ class Program
                         
             if (userInput.ToLower() == "quit")
                 break;
-
+            //This if for Exceeding requirements
             if (userInput.ToLower() == "help") 
             {              
               //show 2 words each time
@@ -69,7 +69,7 @@ class Program
         scripture.HideRandomWords(numberOfWordsToHide);
     }
 
-    // Indirectly retrive the words newly unhadden through Scripture calss. 
+    // For Exceeding requirements. Indirectly retrive the words newly unhadden through Scripture calss. 
     static void SetUnHiddenRandomWords(Scripture scripture, int numberOfWordsToUnhide)
     {
         scripture.UnhideRandomWords(numberOfWordsToUnhide);
