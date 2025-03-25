@@ -16,7 +16,7 @@ public class Prompt
       "whom would you like to serve tomorrow?",
       "What made you smile today?"
    }; 
-   // A method that displays the random picked prompt, with no parameters and no return.
+   // A method that displays the random picked prompt, with no parameters, and returning a prompt.
    public string promptPicker() 
    {
    // Random object   

@@ -6,9 +6,9 @@ using System.Text;
 public class Journal
 {
    //create an instance of built-in List<T> where we'll store data of type Entry
-
-    // a method that recives new entries of type Entry, and has not returns
    public List<Entry> _entries = new List<Entry>(); 
+    // a method that recives new entries of type Entry, and has not returns
+   
    public void AddEntry(Entry newEntry)
    { 
       _entries.Add(newEntry);     

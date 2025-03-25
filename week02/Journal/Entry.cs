@@ -5,8 +5,7 @@ using System.Text;
 public class Entry
 {
    //declare member variables
- 
-   
+    
    public string _message = ""; 
 
    public string _rnmprompt = "";
