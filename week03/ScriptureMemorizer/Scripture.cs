@@ -17,10 +17,9 @@ class Scripture
    public Scripture(Reference reference, string text)
    {
       //assign the passed reference to internal variable _reference
-
       _reference = reference;
 
-      //assign passed text to internal variable _words by converting the string into a List        
+      //assign passed text to internal variable _words by converting the string into a List for future manipulation of the parts (words of the list will change its state using the methods in Word class).         
       _words = text.Split(' ').Select(wordInText => new Word(wordInText)).ToList();
    }
 
@@ -36,7 +35,7 @@ class Scripture
       //var visibleWords = from word in _words
       //where !word.IsHidden()
 
-      //in case there are less words shown than the numberToHide, there is not need to select randmly, just hide all of them.   
+      //in case there are less words shown than the numberToHide, there is not need to select randomly, just hide all of them.   
       if (visibleWords.Count <= numberToHide)
       {
          foreach (var word in visibleWords)

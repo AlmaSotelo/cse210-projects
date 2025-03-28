@@ -83,7 +83,7 @@ class Program
                 exiting = Console.ReadLine();
                 if (exiting == "y")
                 {
-                    Console.WriteLine("By now");
+                    Console.WriteLine("Bye now");
                 }
             }
             
