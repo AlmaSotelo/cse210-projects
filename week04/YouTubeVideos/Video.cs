@@ -20,11 +20,9 @@ class Video
 
    // returns the number of comments
    public int NumberOfComments()
-   {
-      
+   {      
       return _comments.Count();
    }
-
    
    public void AllVideosDisplay()
    {

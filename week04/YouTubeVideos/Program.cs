@@ -41,8 +41,7 @@ class Program
         video1._length = 360;
         video1._comments.AddRange(v1Comments);       
         
-        v1Comments.Add(v1Comment1);
-
+        v1Comments.Add(v1Comment1);        
 
         //Video2 - comments        
         //1.Instantiate an object of class Comment for each comment,
@@ -75,7 +74,6 @@ class Program
         video2._author = "Carrot TD";
         video2._length = 6720;
         video2._comments.AddRange(v2Comments);
-
 
         //Video3 - comments        
         //1.Instantiate an object of class Comment for each comment,
