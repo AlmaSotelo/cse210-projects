@@ -12,7 +12,6 @@ class Video
    public int _length;
    public List<Comment> _comments = new List<Comment>();
 
-   //add videos to the allVideos list
    //create an instance of built-in List<T> where we'll store data of type Video
    public List<Video> _allVideos = new List<Video>();
    

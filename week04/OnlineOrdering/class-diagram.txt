@@ -1,0 +1,115 @@
+YouTube Video Project 
+
+video1, video2,video3                                           comment1, comment2 …
+                      Video                                                                     Comment                                                                                               
+                                                                                  
+  _title: string                                                              _name: string           
+  _author: string                                                         _text: string
+  _length: int	                                                         
+ _comments: List<Comment>                                Display() : void
+ _videos: List<Video>
+ _allVideos(): List<Video>
+
+ NumberOfComments(): int
+ ========
+ AllVideosDisplay(): void
+ ========
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OnlineOrdering Project
+
+product
+    
+                                                                   Product                                                                                   
+
+ _productName: string					      
+ _productId: string						      
+ _productPrice: double					      
+ _quantity: int
+
+ Product(productName:string, productId:string, productPrice: double, quantity: int)
+ 
+ TotalCost() : double
+ 
+ GetProductInfo() : string	
+
+
+
+
+
+customer1, customer2
+                           
+                           Customer
+		
+ _customerName: string
+ _address : Address
+
+ Customer(customerName:string, address:Address)
+ 
+ IsAddressInUSA(): bool
+ 
+ GetCustomerInfo(): string
+
+
+
+
+
+
+
+
+
+
+address1, address2
+
+                                Address
+
+ _street: string
+ _city: string
+ _state: string
+ _country: string
+
+ Address(street:string, city:string, state:string, country:string)
+  
+ LiveInUSA(): bool
+ DisplayAddress():string
+
+
+
+
+
+order1,order2
+                         
+                                      Order
+ 
+_products: List<Product>
+ _customer: Customer
+
+ Order(customer:Customer)
+ 
+ AddProduct(product:Product) : void 
+ TotalPrice() : double
+ MakePackingLabel() : string
+ MakeShippingLabel() : string
