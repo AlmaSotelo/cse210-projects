@@ -25,11 +25,6 @@ class Program
         string summary3 = writingAssignment.GetSummary();
         Console.WriteLine(summary3);
         string writingInfoDisplay = writingAssignment.GetWritingInformation();
-        Console.WriteLine(writingInfoDisplay); 
-
-
-
-
-
+        Console.WriteLine(writingInfoDisplay);
     }
 }

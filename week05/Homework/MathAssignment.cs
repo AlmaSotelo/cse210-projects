@@ -7,7 +7,7 @@ public class MathAssignment : Assignment
    private string _problems;
 
    //4.Create a constructor for your class that accepts all four parameters, have it call the base class constructor to set the base class attributes that way.
-   public MathAssignment(string name, string topic, string textbookSection, string problems ) : base(name, topic)
+   public MathAssignment(string name, string topic, string textbookSection, string problems) : base(name, topic)
    {
       _textbookSection = textbookSection;
       _problems = problems;
@@ -16,6 +16,6 @@ public class MathAssignment : Assignment
    //Add the GetHomeworkList() method.
    public string GetHomeworkList()
    {
-      return $"Secction {_textbookSection} Problems {_problems}\n";
+      return $"Section {_textbookSection} Problems {_problems}\n";
    }
 }

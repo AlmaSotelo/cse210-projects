@@ -13,7 +13,7 @@ public class Assignment
       _topic = topic;
    }
    //Add the method for GetSummary() to return the student's name and the topic.
-   public string GetSummary()
+   public string GetSummary() 
    {
       return $"\n{_studentName} - {_topic}";
    }
