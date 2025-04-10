@@ -6,8 +6,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        string userInput = "";        
+        string userInput = "";
         Console.WriteLine("Hello World! This is the Mindfulness Project.\n");
+        BreathingActivity breathingActivity = new BreathingActivity();
+        ReflectingActivity reflectingActivity = new ReflectingActivity();
+        ListingActivity listingActivity = new ListingActivity();
         while (userInput != "4")
         {
             Console.WriteLine("Menu Options:");
@@ -17,41 +20,51 @@ class Program
             Console.WriteLine("4. Quit");
             Console.Write("Select a choice from the menu: ");
             userInput = Console.ReadLine();
-            
+
             if (userInput == "4")
+            {
+                //Exceeds core requirements. Displays total runds, total duration, and the name of the activity
+                Console.Clear();
+                Console.WriteLine("In total you completed:");
+                breathingActivity.DisplayRoundsMessage();
+                reflectingActivity.DisplayRoundsMessage();
+                listingActivity.DisplayRoundsMessage();
+                listingActivity.ShowSpinner(10);
+                Console.Clear();
                 break;
+            }
             //Exceeds core requirements. Validates userInput    
-            if (userInput !="1" && userInput !="2" && userInput !="3")
+            if (userInput != "1" && userInput != "2" && userInput != "3")
             {
                 Console.Clear();
-                Console.WriteLine("Ivalid input");                
+                Console.WriteLine("Ivalid input");
             }
-                   
-            if (userInput == "1") 
-            { 
-                BreathingActivity breathingActivity = new BreathingActivity();                
+
+            if (userInput == "1")
+            {
                 //call the method to display the starting message to the screen.                
-                breathingActivity.DisplayStartingMessage(); 
+                breathingActivity.DisplayStartingMessage();
                 breathingActivity.Run();
-                breathingActivity.DisplayEndingMessage();                
-            } 
-            if (userInput == "2") 
-            { 
-                ReflectingActivity reflectingActivity = new ReflectingActivity();
+                breathingActivity.DisplayEndingMessage();
+                breathingActivity.GetListWithAddedDuration();
+            }
+            if (userInput == "2")
+            {
                 //call the method to display the starting message to the screen.
                 reflectingActivity.DisplayStartingMessage();
                 reflectingActivity.Run();
-                reflectingActivity.DisplayEndingMessage();              
-            } 
-            if (userInput == "3") 
-            { 
-                ListingActivity listingActivity = new ListingActivity ();
+                reflectingActivity.DisplayEndingMessage();
+                reflectingActivity.GetListWithAddedDuration();
+            }
+            if (userInput == "3")
+            {
                 //call the method to display the starting message to the screen.
                 listingActivity.DisplayStartingMessage();
                 listingActivity.Run();
                 listingActivity.DisplayEndingMessage();
-            }                    
-            
-        }                 
+                listingActivity.GetListWithAddedDuration();
+            }
+
+        }
     }
 }

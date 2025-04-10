@@ -44,7 +44,7 @@ public class ReflectingActivity : Activity
       {
          Console.WriteLine("Now ponder on each of the following quesions as they related to this experience.");
          Console.Write("You may begin in: ");
-         ShowCountDown(9);
+         ShowCountDown(5);
          Console.Clear();
          DateTime startTime = DateTime.Now;
          //in order to access _duration, change it to protected
@@ -52,7 +52,7 @@ public class ReflectingActivity : Activity
          do
          { 
             Console.Write($"\n{DisplayQuestion()}");
-            ShowSpinner(5);
+            ShowSpinner(3);
          }while (DateTime.Now < futureTime);         
          Console.WriteLine();
       }   

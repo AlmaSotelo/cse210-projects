@@ -9,7 +9,7 @@ public class Activity
    protected string _name;
    protected string _description;
    protected int _duration;
-   
+   //Exceeds core requirements.Add list of runs that store all _duration
    protected List<int> _runs = new List<int>();
 
    //create a constructor to initialize the variables
@@ -18,7 +18,6 @@ public class Activity
       _name = "Breathing Activity";
       _description = "";
       _duration = 0;
-      //_runs= [];
    }
 
    public void DisplayStartingMessage()
@@ -30,7 +29,7 @@ public class Activity
       //try&catch for Exceeding core requirements
       try
       {
-        _duration = int.Parse(Console.ReadLine());      
+         _duration = int.Parse(Console.ReadLine());
          Console.WriteLine(_duration);
          Console.Clear();
          Console.WriteLine("Get ready...");
@@ -39,9 +38,9 @@ public class Activity
       {
          Console.WriteLine("Invalid entry");
          Console.WriteLine("Let's do it for 30 seconds");
-         _duration = 30;         
-      }    
-        
+         _duration = 30;
+      }
+
       //call the method to show the spiner
       ShowSpinner(3);
    }
@@ -49,10 +48,15 @@ public class Activity
    public void DisplayEndingMessage()
    {
       Console.WriteLine("\nWell done!!\n");
-      ShowSpinner(5);
+      ShowSpinner(2);
       Console.WriteLine($"You have completed another {_duration} seconds");
-      ShowSpinner(4);
+      ShowSpinner(3);
       Console.Clear();
+   }
+   //Exceeds core requirements. 
+   public void DisplayRoundsMessage()
+   {
+      Console.WriteLine($"{_runs.Count()} runs of {_name} with a total of {GetDurationsSum()} seconds");
    }
 
    public void ShowSpinner(int seconds)
@@ -73,7 +77,7 @@ public class Activity
          Console.Write("\\");
          Thread.Sleep(300);
          Console.Write("\b \b");
-      }      
+      }
       timer.Stop();
       //disapear the spinner
       Console.Write("\b \b");
@@ -88,5 +92,16 @@ public class Activity
          Console.Write("\b \b");
       }
    }
-   
+
+   //Exceeds core requirements. To add _duration in list
+   public List<int> GetListWithAddedDuration()
+   {
+      _runs.Add(_duration);
+      return _runs;
+   }
+   //Exceeds core requirements. To sum all _duration in list
+   public int GetDurationsSum()
+   {
+      return _runs.Sum();
+   }
 }

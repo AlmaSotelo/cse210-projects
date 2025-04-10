@@ -23,6 +23,6 @@ public class BreathingActivity : Activity
          ShowCountDown(4);
          Console.WriteLine();
       }
-      while (DateTime.Now < futureTime);      
+      while (DateTime.Now < futureTime);
    }
 }

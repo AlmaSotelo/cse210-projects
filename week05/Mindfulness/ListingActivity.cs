@@ -26,7 +26,7 @@ public class ListingActivity : Activity
       Console.WriteLine("List as many responses you can to the following prompt");
       GetRandomPrompt();
       Console.Write("You may begin in: ");
-      ShowCountDown(5);
+      ShowCountDown(3);
       DateTime startTime = DateTime.Now;
       //in order to access _duration, change it to protected
       DateTime futureTime = startTime.AddSeconds(_duration);
@@ -56,5 +56,5 @@ public class ListingActivity : Activity
       _listFromUser.Add(userEntry);
 
       return _listFromUser;
-   }   
+   }
 }
