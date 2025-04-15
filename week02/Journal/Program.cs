@@ -1,6 +1,5 @@
 using System;
 using System.Diagnostics.Metrics;
-using System.IO;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -93,23 +92,6 @@ class Program
                 exiting = "y";
             }
         }
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
 
