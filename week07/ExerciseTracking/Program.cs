@@ -4,6 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World! This is the ExerciseTracking Project.");
+        Running running = new Running();
+        Biking biking = new Biking();
+        Swimming swimming = new Summing();
     }
 }

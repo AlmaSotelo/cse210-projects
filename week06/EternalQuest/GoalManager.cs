@@ -11,7 +11,8 @@ public class GoalManager
 
    private string userFirstOption = "";
    private string userGoalOption = "";
-
+   string[] fields;
+   
    private SimpleGoal simpleGoal;
    private EternalGoal eternalGoal;
    private ChecklistGoal checklistGoal;
@@ -88,11 +89,13 @@ public class GoalManager
    }
    //Loop through the list of goals and display the full details. MAY NEED ANOTHER METHOD IN GOAL CLASS!   
    public void ListGoalDetails()
-   {
+   {     
+      
       int i = 1;
-      Console.WriteLine("Your goals:");
+      Console.WriteLine("Your goals are:");
       foreach (Goal goal in _goals)
       {
+         //Console.WriteLine(goal.IsComplete()); //test
          string goalDetails = goal.GetDetailsString();
          Console.WriteLine($"{i.ToString()}. {goalDetails}");
          i++;
@@ -158,7 +161,7 @@ public class GoalManager
    {
       Console.Write("Waht is the filename for the goal file? ");
       string filename = Console.ReadLine();
-      string path = @"C:\Users\Alma\Documents\BYU-Pathway\SOFTWARE DEVELOPMENT Degree\Associate Degree All Courses\WEB And COMPUTER PROGRAMMING  Certificate\CSE 210 Programming with Classes\cse210-projects\week06\EternalQuest\goals.txt";
+      
       // create the file in append mode
       using (StreamWriter outputFile = new StreamWriter(filename))
       {
@@ -181,7 +184,7 @@ public class GoalManager
 
       Console.Write("What is the filename for the goal file? ");
       string filename = Console.ReadLine();
-      string[] lines = System.IO.File.ReadAllLines("goals.txt");
+      string[] lines = System.IO.File.ReadAllLines(filename);
 
       //convert the accumulated score from line #1
       _score = int.Parse(lines[0]);
@@ -189,26 +192,31 @@ public class GoalManager
       //following lines needs to be split
       for (int i = 1; i < lines.Count(); i++)
       {
-         string[] parts = lines[i].Split("|");
+         //separate the Goal type from the rest
+         string[] parts = lines[i].Split(":");
+         
+         //split the rest of the line starting at index 1
+         string[] fields = parts[1].Split(",");
 
          if (parts[0] == "SimpleGoal")
          // Fields are [0] name, [1] description, [2] points, [3] complete?
          {
-            SimpleGoal simpleGoal = new SimpleGoal(parts[0], parts[1], parts[2]);
-            simpleGoal.SetIsComplete(parts[3]);
-            _goals.Add(simpleGoal);
+            SimpleGoal simpleGoal = new SimpleGoal(fields[0], fields[1], fields[2]);
+            simpleGoal.SetIsComplete(fields[3]);            
+            _goals.Add(simpleGoal); 
+            Console.WriteLine(fields[3]);           
          }
          else if (parts[0] == "EternalGoal")
          // Fields are [0] name, [1] description, [2] points
          {
-            EternalGoal eternalGoal = new EternalGoal(parts[0], parts[1], parts[2]);
+            EternalGoal eternalGoal = new EternalGoal(fields[0], fields[1], fields[2]);
             _goals.Add(eternalGoal);
          }
          else if (parts[0] == "ChecklistGoal")
-         // Fields are [0] name, [1] description, [2] points, [3] amount completed, [4] target, [5] bonus
+         // Fields are [0] name, [1] description, [2] points, [3] bonus, [4] target, [5] amount completed
          {
-            ChecklistGoal checklistGoal = new ChecklistGoal(parts[0], parts[1], parts[2], int.Parse(parts[4]), int.Parse(parts[4]));
-            checklistGoal.SetAmountCompleted(int.Parse(parts[3]));
+            ChecklistGoal checklistGoal = new ChecklistGoal(fields[0], fields[1], fields[2], int.Parse(fields[3]), int.Parse(fields[4]));
+            checklistGoal.SetAmountCompleted(int.Parse(fields[5]));
             _goals.Add(checklistGoal);
          }
       }

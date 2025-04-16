@@ -2,7 +2,7 @@ using System.ComponentModel;
 public class SimpleGoal :  Goal
 {
    // Attributes
-   private bool _isComplete;
+   public bool _isComplete;
    
    //Constructor that accepts, name, description and points. Get the values passed from the constractor in parent class. Sets the variable for if it is complete to be false.
    public SimpleGoal(string name, string description, string points) : base (name, description, points)
@@ -19,6 +19,7 @@ public class SimpleGoal :  Goal
       if (_isComplete == false)
       {
          _isComplete = true;
+         CongratsMessage(int.Parse(_points),0);
       }
       // what if we previously were complete?
       else
@@ -27,7 +28,7 @@ public class SimpleGoal :  Goal
    }
    //return whether this goal is complete or not
    public override bool IsComplete()
-   {      
+   {
       return _isComplete;
    }
 
@@ -47,6 +48,5 @@ public class SimpleGoal :  Goal
       {
          _isComplete = false;
       }
-   }         
-   
+   }  
 }
