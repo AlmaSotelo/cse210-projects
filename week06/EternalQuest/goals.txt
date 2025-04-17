@@ -1,4 +1,4 @@
 850
 SimpleGoal: Talk, Give a Talk, 100, True
 EternalGoal: Scriptures, Read scriptures, 50
-ChecklistGoal: Temple, Go to the Temple, 50, 500, 3, 3
+ChecklistGoal: Temple, Go to the temple, 50, 500, 3, 3

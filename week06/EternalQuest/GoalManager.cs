@@ -159,7 +159,7 @@ public class GoalManager
    //Look through the goals, and convert each goal to a string and then save the string
    public void SaveGoals()
    {
-      Console.Write("Waht is the filename for the goal file? ");
+      Console.Write("What is the filename for the goal file? ");
       string filename = Console.ReadLine();
       
       // create the file in append mode
@@ -202,7 +202,7 @@ public class GoalManager
          // Fields are [0] name, [1] description, [2] points, [3] complete?
          {
             SimpleGoal simpleGoal = new SimpleGoal(fields[0], fields[1], fields[2]);
-            simpleGoal.SetIsComplete(fields[3]);            
+            simpleGoal.SetIsComplete(fields[3].Trim());            
             _goals.Add(simpleGoal); 
             Console.WriteLine(fields[3]);           
          }
