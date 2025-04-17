@@ -1,29 +1,27 @@
 public abstract class Activity
 {
+   private string _name;
    private string _date;
-   private double _minutes;
+   protected int _minutes;   
+      
 
-   public Activity()
+
+   public Activity(string date, string name, int length)
    {
-      _date = "";
-      _minutes = 0;
+      _date = date;
+      _name = name;
+      _minutes = length;
    }
 
-   public virtual string GetActivitySummaryString()
+   public virtual string GetSummary()
    {
-      return "string";
+      return $"* {_date} {_name} ({_minutes})- Distance {GetDistance():F2} miles, Speed {GetSpeed():F2} mph, Pace: {GetPace():F2} min per mile";
    }
 
-   public double GetDistance()
-   {
-      return 0;
-   }
-
-   public double GetSpeed()
-   {
-      return 0;
-   }
-
+   public abstract double GetDistance();
+   
+   public abstract double GetSpeed();
+   
    public abstract double GetPace();
    
 }

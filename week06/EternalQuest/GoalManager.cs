@@ -30,7 +30,6 @@ public class GoalManager
    //Loop until user quits
    public void Start()
    {
-
       while (userFirstOption != "6")
       {
          DisplayPlayerInfo();
@@ -47,7 +46,6 @@ public class GoalManager
          {
             case "1":
                CreateGoal();
-               //simpleGoal.GetGoalName();
                break;
             case "2":
                ListGoalDetails();
