@@ -12,7 +12,7 @@ public class GoalManager
    private string userFirstOption = "";
    private string userGoalOption = "";
    string[] fields;
-   
+
    private SimpleGoal simpleGoal;
    private EternalGoal eternalGoal;
    private ChecklistGoal checklistGoal;
@@ -30,7 +30,7 @@ public class GoalManager
    //Loop until user quits
    public void Start()
    {
-      
+
       while (userFirstOption != "6")
       {
          DisplayPlayerInfo();
@@ -89,8 +89,8 @@ public class GoalManager
    }
    //Loop through the list of goals and display the full details. MAY NEED ANOTHER METHOD IN GOAL CLASS!   
    public void ListGoalDetails()
-   {     
-      
+   {
+
       int i = 1;
       Console.WriteLine("Your goals are:");
       foreach (Goal goal in _goals)
@@ -161,7 +161,7 @@ public class GoalManager
    {
       Console.Write("What is the filename for the goal file? ");
       string filename = Console.ReadLine();
-      
+
       // create the file in append mode
       using (StreamWriter outputFile = new StreamWriter(filename))
       {
@@ -194,7 +194,7 @@ public class GoalManager
       {
          //separate the Goal type from the rest
          string[] parts = lines[i].Split(":");
-         
+
          //split the rest of the line starting at index 1
          string[] fields = parts[1].Split(",");
 
@@ -202,9 +202,9 @@ public class GoalManager
          // Fields are [0] name, [1] description, [2] points, [3] complete?
          {
             SimpleGoal simpleGoal = new SimpleGoal(fields[0], fields[1], fields[2]);
-            simpleGoal.SetIsComplete(fields[3].Trim());            
-            _goals.Add(simpleGoal); 
-            Console.WriteLine(fields[3]);           
+            simpleGoal.SetIsComplete(fields[3].Trim());
+            _goals.Add(simpleGoal);
+            Console.WriteLine(fields[3]);
          }
          else if (parts[0] == "EternalGoal")
          // Fields are [0] name, [1] description, [2] points
